@@ -11,7 +11,9 @@ import (
 )
 
 const (
-	URL           = "https://www.benda.co.il/product/36208-498-32/"
+	// URL = "https://www.benda.co.il/product/36208-498-32/"
+	URL = "https://www.hemilton.co.il/product/2501hem"
+	// URL           = "https://bconnect.co.il/product/%d7%9e%d7%98%d7%a2%d7%9f-%d7%9e%d7%94%d7%99%d7%a8-%d7%a0%d7%99%d7%99%d7%93-%d7%9c-boost%e2%86%91charge-pro-apple-watch/"
 	SYSTEM_PROMPT = `
 You are a precise data extraction assistant. You will receive an  page that describes a consumer product with details and must extract information to fill a JSON object with exactly three fields.
 
@@ -47,7 +49,8 @@ Now process the provided URL and return the filled JSON.
 
 func run() error {
 	llm, err := openai.New(
-		openai.WithModel("gpt-4o-mini"),
+		// openai.WithModel("gpt-4o-mini"),
+		openai.WithModel("gpt-5-chat-latest"),
 	)
 	if err != nil {
 		return err
